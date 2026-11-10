@@ -14,4 +14,4 @@ Each kit says which platform it was tested on and what wasn't tested.
 
 | Kit | Builds |
 | --- | --- |
-| [Pasteboard](pasteboard.md) | A private web page where Claude Code replies are posted verbatim, rendered as markdown, with Board and Saved tabs, live updates, a `/pasteboard` skill and a Stop hook |
+| [Pasteboard](pasteboard.md) | A private web page where Claude Code replies are posted verbatim, rendered as markdown, with Board and Saved tabs, live updates, a `/pasteboard` skill and a Stop hook, plus a New form for pasting text from elsewhere that Claude reads back as data, never as instructions |
