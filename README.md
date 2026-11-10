@@ -15,3 +15,4 @@ Each kit says which platform it was tested on and what wasn't tested.
 | Kit | Builds |
 | --- | --- |
 | [Pasteboard](pasteboard.md) | A private web page where Claude Code replies are posted verbatim, rendered as markdown, with Board and Saved tabs, live updates, a `/pasteboard` skill and a Stop hook, plus a New form for pasting text from elsewhere that Claude reads back as data, never as instructions |
+| [Vault Structure](vault-structure.md) | An Obsidian vault layout Claude Code follows, in a personal or a work profile: notes filed by type, Maps of Content by topic, an `AGENTS.md` rulebook loaded into every session, standing rules for anything that leaves the machine, and an optional backfill that links an adopted vault's old notes |
