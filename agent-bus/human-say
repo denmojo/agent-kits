@@ -1,0 +1,15 @@
+#!/usr/bin/python3 -I
+"""human-say: post a message to the bus as the person (the registry entry
+marked "human": true). Agents must not be allowed to run this command."""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+import agentbus
+
+prog = os.path.basename(sys.argv[0])
+name = agentbus.human()
+if not name:
+    print('%s: no registry entry is marked "human": true' % prog, file=sys.stderr)
+    sys.exit(2)
+sys.exit(agentbus.cli_say(name, sys.argv[1:], prog))

@@ -1,0 +1,12 @@
+{
+ "claude": {
+  "wake": "live"
+ },
+ "claude2": {
+  "wake": "live"
+ },
+ "you": {
+  "wake": "none",
+  "human": true
+ }
+}

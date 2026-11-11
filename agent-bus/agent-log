@@ -1,0 +1,23 @@
+#!/usr/bin/python3 -I
+"""agent-log: all threads merged in time order, newest last."""
+import argparse
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+import agentbus
+
+ap = argparse.ArgumentParser(prog="agent-log")
+ap.add_argument("--thread")
+ap.add_argument("--since", help="YYYY-MM-DD HH:MM")
+a = ap.parse_args()
+try:
+    names = [a.thread] if a.thread else agentbus.threads()
+    msgs = [m for t in names for m in agentbus.read_thread(t)]
+except ValueError as e:
+    print("agent-log: %s" % e, file=sys.stderr)
+    sys.exit(1)
+if a.since:
+    msgs = [m for m in msgs if m.ts >= a.since]
+msgs.sort(key=lambda m: (m.ts, m.thread, m.index))
+sys.stdout.write("".join(agentbus.format_message(m) for m in msgs))
